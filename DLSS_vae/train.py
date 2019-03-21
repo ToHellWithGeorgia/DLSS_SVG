@@ -124,7 +124,7 @@ def main(args):
             total_loss_val += loss.item()
         if total_loss_val < best_dev_loss:
             best_dev_loss = total_loss_val
-            torch.save(model.state_dict(), args.save_dir + "best_rae.pt")
+            # torch.save(model.state_dict(), args.save_dir + "best_rae.pt")
             log.info("Better model saved. Average loss: " + \
                 str(total_loss_val/len(dev_loader)))
         # Save the dev image for each epoch

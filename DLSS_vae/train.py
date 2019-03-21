@@ -124,7 +124,7 @@ def main(args):
             total_loss_val += loss.item()
         if total_loss_val < best_dev_loss:
             best_dev_loss = total_loss_val
-            # torch.save(model.state_dict(), args.save_dir + "best_rae.pt")
+            torch.save(model.state_dict(), args.save_dir + "best_rae.pt")
             log.info("Better model saved. Average loss: " + \
                 str(total_loss_val/len(dev_loader)))
         # Save the dev image for each epoch
@@ -137,7 +137,7 @@ def main(args):
             plt.imsave(dev_png_dir + "ss.png", \
                        np.asarray(tensor2pil(ss_dev[dev_sv_idx].cpu().detach())))
         
-        if epoch % 15:
+        if epoch % 15 == 0:
             torch.save(model.state_dict(), \
                        args.save_dir + "epoch_{}.pt".format(epoch))
         model.train()

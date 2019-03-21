@@ -46,5 +46,6 @@ We already have some training examples in the folder you can refer to.
 
 ### Contributions
 Zhihan Jiang: Data generation scripts, model building and debugging
+
 Wensi Yin: Model building and researching
 
